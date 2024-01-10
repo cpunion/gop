@@ -27,7 +27,7 @@ jobs:
         version=$(cat VERSION)
         echo "VERSION=${version}"
         echo "TAG_NAME=${tag_name}"
-        if [ "$tag_name" != "v$version" ]; then
+        if [ "$tag_name" != "$version" ]; then
           echo "VERSION file is not consistent with tag name"
           exit 1
         fi
