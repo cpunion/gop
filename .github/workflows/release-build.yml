@@ -35,4 +35,6 @@ jobs:
         go install github.com/goreleaser/goreleaser@latest
 
     - name: Release
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: goreleaser release

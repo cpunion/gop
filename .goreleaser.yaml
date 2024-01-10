@@ -74,9 +74,6 @@ winget:
     publisher_url: https://github.com/goplus/gop
     publisher_support_url: "https://github.com/goplus/gop/issues/new"
     package_identifier: GoPlus
-    repository:
-      git:
-        url: https://github.com/goplus/gop
     short_description: The Go+ Programming Language
     description: |
       The Go+ programming language is designed for engineering, STEM education, and data science.
@@ -90,3 +87,14 @@ winget:
     dependencies:
       - package_identifier: GoLang.Go
         minimum_version: 1.18.0
+    repository:
+      owner: goplus
+      name: winget-pkgs
+      branch: "goreleaser-{{.Version}}"
+      pull_request:
+        enabled: true
+        draft: true
+        base:
+          owner: microsoft
+          name: winget-pkgs
+          branch: master
