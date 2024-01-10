@@ -55,6 +55,13 @@ archives:
     format_overrides:
       - goos: windows
         format: zip
+    files:
+      - LICENSE
+      - "*.mod"
+      - "*.sum"
+      - "*.md"
+      - "**/*.go"
+      - "**/*.md"
 
 changelog:
   sort: asc
