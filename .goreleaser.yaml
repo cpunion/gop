@@ -70,7 +70,7 @@ changelog:
 winget:
   - name: GoPlus
     homepage: "https://goplus.org/"
-    publisher: Goplus
+    publisher: GoPlus
     publisher_url: https://github.com/goplus/gop
     publisher_support_url: "https://github.com/goplus/gop/issues/new"
     package_identifier: GoPlus.GoPlus
@@ -88,13 +88,13 @@ winget:
       - package_identifier: GoLang.Go
         minimum_version: 1.18.0
     repository:
-      owner: goplus
+      owner: cpunion
       name: winget-pkgs
       branch: "goreleaser-v{{.Version}}"
       pull_request:
         enabled: true
         draft: true
         base:
-          owner: microsoft
+          owner: cpunion
           name: winget-pkgs
           branch: master
