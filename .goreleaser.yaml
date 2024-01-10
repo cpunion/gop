@@ -45,7 +45,7 @@ archives:
   - format: tar.gz
     # this name template makes the OS and Arch compatible with the results of `uname`.
     name_template: >-
-      {{ .ProjectName }}_v{{.Version}}
+      {{ .ProjectName }}_v{{.Version}}_
       {{- title .Os }}_
       {{- if eq .Arch "amd64" }}x86_64
       {{- else if eq .Arch "386" }}i386
@@ -69,10 +69,6 @@ changelog:
     exclude:
       - "^docs:"
       - "^test:"
-
-release:
-  extra_files:
-    - glob: Makefile
 
 winget:
   - name: GoPlus
