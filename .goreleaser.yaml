@@ -86,14 +86,14 @@ winget:
     license: Apache-2.0
     skip_upload: true
     release_notes: "{{.Changelog}}"
-    release_notes_url: "https://github.com/goplus/gop/releases/tag/{{.Version}}"
+    release_notes_url: "https://github.com/goplus/gop/releases/tag/v{{.Version}}"
     dependencies:
       - package_identifier: GoLang.Go
         minimum_version: 1.18.0
     repository:
       owner: goplus
       name: winget-pkgs
-      branch: "goreleaser-{{.Version}}"
+      branch: "goreleaser-v{{.Version}}"
       pull_request:
         enabled: true
         draft: true
