@@ -25,6 +25,8 @@ jobs:
       run: |
         tag_name="${GITHUB_REF##*/}"
         version=$(cat VERSION)
+        echo "VERSION=${version}"
+        echo "TAG_NAME=${tag_name}"
         if [ "$tag_name" != "v$version" ]; then
           echo "VERSION file is not consistent with tag name"
           exit 1
