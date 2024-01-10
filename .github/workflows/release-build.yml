@@ -23,7 +23,7 @@ jobs:
     
     - name: Check VERSION consistency
       run: |
-        tag_name="${GITHUB_REF##*/}"
+        tag_name=$(git describe --tags --dirty)
         version=$(cat VERSION)
         echo "VERSION=${version}"
         echo "TAG_NAME=${tag_name}"
