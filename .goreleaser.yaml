@@ -70,7 +70,7 @@ release:
 winget:
   - name: GoPlus
     homepage: "https://goplus.org/"
-    publisher: Goplus Team
+    publisher: Goplus
     publisher_url: https://github.com/goplus/gop
     publisher_support_url: "https://github.com/goplus/gop/issues/new"
     package_identifier: GoPlus.GoPlus
