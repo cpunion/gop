@@ -21,12 +21,12 @@ jobs:
     
     - name: Check VERSION consistency
       run: |
-        tag_name=$(git describe --tags --dirty)
+        tag=$(git describe --tags --dirty)
         version=$(cat VERSION)
-        echo "VERSION=${version}"
-        echo "TAG_NAME=${tag_name}"
-        if [ "$tag_name" != "$version" ]; then
+        if [ "$tag" != "$version" ]; then
           echo "VERSION file is not consistent with tag name"
+          echo "VERSION: $version"
+          echo "TAG: $tag"
           exit 1
         fi
 
