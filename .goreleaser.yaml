@@ -73,7 +73,7 @@ winget:
     publisher: Goplus Team
     publisher_url: https://github.com/goplus/gop
     publisher_support_url: "https://github.com/goplus/gop/issues/new"
-    package_identifier: GoPlus
+    package_identifier: GoPlus.GoPlus
     short_description: The Go+ Programming Language
     description: |
       The Go+ programming language is designed for engineering, STEM education, and data science.
