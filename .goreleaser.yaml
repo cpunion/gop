@@ -97,6 +97,7 @@ winget:
       pull_request:
         enabled: true
         draft: false
+        check_boxes: true
         base:
           owner: cpunion
           name: winget-pkgs
