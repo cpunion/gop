@@ -135,42 +135,42 @@ nfpms:
       - src: LICENSE
         dst: /usr/lib/{{ .ProjectName }}/LICENSE
       - src: "README.md"
-        dst: /usr/lib/{{ .ProjectName }}/
+        dst: /usr/lib/{{ .ProjectName }}/README.md
       - src: "go.mod"
-        dst: /usr/lib/{{ .ProjectName }}/
+        dst: /usr/lib/{{ .ProjectName }}/go.mod
       - src: "go.sum"
-        dst: /usr/lib/{{ .ProjectName }}/
+        dst: /usr/lib/{{ .ProjectName }}/go.sum
       - src: "*.go"
         dst: /usr/lib/{{ .ProjectName }}/
       - src: ast
-        dst: /usr/lib/{{ .ProjectName }}/
+        dst: /usr/lib/{{ .ProjectName }}/ast
       - src: builtin
-        dst: /usr/lib/{{ .ProjectName }}/
+        dst: /usr/lib/{{ .ProjectName }}/builtin
       - src: cl
-        dst: /usr/lib/{{ .ProjectName }}/
+        dst: /usr/lib/{{ .ProjectName }}/cl
       - src: cmd
-        dst: /usr/lib/{{ .ProjectName }}/
+        dst: /usr/lib/{{ .ProjectName }}/cmd
       - src: doc
-        dst: /usr/lib/{{ .ProjectName }}/
+        dst: /usr/lib/{{ .ProjectName }}/doc
       - src: env
-        dst: /usr/lib/{{ .ProjectName }}/
+        dst: /usr/lib/{{ .ProjectName }}/env
       - src: format
-        dst: /usr/lib/{{ .ProjectName }}/
+        dst: /usr/lib/{{ .ProjectName }}/format
       - src: parser
-        dst: /usr/lib/{{ .ProjectName }}/
+        dst: /usr/lib/{{ .ProjectName }}/parser
       - src: printer
-        dst: /usr/lib/{{ .ProjectName }}/
+        dst: /usr/lib/{{ .ProjectName }}/parser
       - src: scanner
-        dst: /usr/lib/{{ .ProjectName }}/
+        dst: /usr/lib/{{ .ProjectName }}/scanner
       - src: token
-        dst: /usr/lib/{{ .ProjectName }}/
+        dst: /usr/lib/{{ .ProjectName }}/token
       - src: watcher
-        dst: /usr/lib/{{ .ProjectName }}/
+        dst: /usr/lib/{{ .ProjectName }}/watcher
       - src: "x"
-        dst: /usr/lib/{{ .ProjectName }}/
+        dst: /usr/lib/{{ .ProjectName }}/x
       # symlinks to binaries
       - src: bin
-        dst: /usr/lib/{{ .ProjectName }}/
+        dst: /usr/lib/{{ .ProjectName }}/bin
       - src: "/usr/lib/{{ .ProjectName }}/bin/gop"
         dst: /usr/bin/gop
         type: symlink
