@@ -119,7 +119,7 @@ nfpms:
     overrides:
       deb:
         dependencies:
-          - "go (>= 1.18.0)"
+          - "golang-go (>= 1.18.0)"
       rpm:
         dependencies:
           - "golang-bin >= 1.18.0"
