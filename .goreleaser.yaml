@@ -124,7 +124,7 @@ nfpms:
           - "go (>= 1.18.0)"
       rpm:
         dependencies:
-          - "go >= 1.18.0"
+          - "golang-go >= 1.18.0"
     file_name_template: >-
       {{ .ProjectName }}_v{{.Version}}_
       {{- title .Os }}_
