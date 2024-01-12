@@ -125,6 +125,13 @@ nfpms:
       rpm:
         dependencies:
           - "go >= 1.18.0"
+    file_name_template: >-
+      {{ .ProjectName }}_v{{.Version}}_
+      {{- title .Os }}_
+      {{- if eq .Arch "amd64" }}x86_64
+      {{- else if eq .Arch "386" }}i386
+      {{- else }}{{ .Arch }}{{ end }}
+      {{- if .Arm }}v{{ .Arm }}{{ end }}
 
 snapcrafts:
   - name: goplus
