@@ -178,7 +178,8 @@ nfpms:
         type: symlink
 
 snapcrafts:
-  - name: goplus
+  - id: gop
+    name: goplus
     title: The Go+ Programming Language
     summary: The Go+ Programming Language
     description: |
@@ -188,6 +189,60 @@ snapcrafts:
       - For data science: communicating with engineers in the same language.
     confinement: classic
     license: Apache-2.0
+    name_template: >-
+      {{ .ProjectName }}_v{{.Version}}_
+      {{- title .Os }}_
+      {{- if eq .Arch "amd64" }}x86_64
+      {{- else if eq .Arch "386" }}i386
+      {{- else }}{{ .Arch }}{{ end }}
+      {{- if .Arm }}v{{ .Arm }}{{ end }}
+    extra_files:
+      # source folder
+      - source: LICENSE
+        destination: LICENSE
+      - source: "README.md"
+        destination: README.md
+      - source: "go.mod"
+        destination: go.mod
+      - source: "go.sum"
+        destination: go.sum
+      - source: ast
+        destination: ast
+      - source: builtin
+        destination: builtin
+      - source: cl
+        destination: cl
+      - source: cmd
+        destination: cmd
+      - source: doc
+        destination: doc
+      - source: env
+        destination: env
+      - source: format
+        destination: format
+      - source: parser
+        destination: parser
+      - source: printer
+        destination: parser
+      - source: scanner
+        destination: scanner
+      - source: token
+        destination: token
+      - source: watcher
+        destination: watcher
+      - source: "x"
+        destination: x
+    apps:
+      gop:
+        command: "gop"
+        aliases: ["gop"]
+        environment:
+          GOPROOT: "$SNAP"
+      gopfmt:
+        command: "gopfmt"
+        aliases: ["gopfmt"]
+        environment:
+          GOPROOT: "$SNAP"
 
 checksum:
   name_template: "{{ .ProjectName }}_v{{ .Version }}_checksums.txt"
