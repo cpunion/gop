@@ -162,8 +162,8 @@ snapcrafts:
       {{- if .Arm }}v{{ .Arm }}{{ end }}
     extra_files:
       # source folder
-      - source: "."
-        destination: "$SNAP"
+      - source: "*"
+        destination: "/"
     apps:
       gop:
         command: "gop"
