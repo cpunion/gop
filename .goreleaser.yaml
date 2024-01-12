@@ -144,3 +144,6 @@ snapcrafts:
       - For data science: communicating with engineers in the same language.
     confinement: classic
     license: Apache-2.0
+
+checksum:
+  name_template: "{{ .ProjectName }}_v{{ .Version }}_checksums.txt"
