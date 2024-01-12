@@ -83,21 +83,21 @@ winget:
     license: Apache-2.0
     skip_upload: false
     release_notes: "{{.Changelog}}"
-    release_notes_url: "https://github.com/goplus/gop/releases/tag/v{{.Version}}"
+    release_notes_url: "https://github.com/cpunion/gop/releases/tag/v{{.Version}}"
     dependencies:
       - package_identifier: GoLang.Go
         minimum_version: 1.18.0
     repository:
-      owner: goplus
+      owner: cpunion
       name: winget-pkgs
       branch: "{{.ProjectName}}-v{{.Version}}"
       git:
-        url: "git@github.com:goplus/winget-pkgs.git"
+        url: "git@github.com:cpunion/winget-pkgs.git"
         private_key: "{{ .Env.WINGET_PKGS_PRIVATE_KEY }}"
       pull_request:
         enabled: true
         draft: false
         base:
-          owner: microsoft
+          owner: cpunion
           name: winget-pkgs
           branch: master
