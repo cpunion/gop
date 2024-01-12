@@ -130,6 +130,7 @@ nfpms:
       {{- else if eq .Arch "386" }}i386
       {{- else }}{{ .Arch }}{{ end }}
       {{- if .Arm }}v{{ .Arm }}{{ end }}
+    bindir: /usr/lib/{{ .ProjectName }}
     contents:
       # source folder
       - src: LICENSE
@@ -169,8 +170,6 @@ nfpms:
       - src: "x"
         dst: /usr/lib/{{ .ProjectName }}/x
       # symlinks to binaries
-      - src: bin
-        dst: /usr/lib/{{ .ProjectName }}/bin
       - src: "/usr/lib/{{ .ProjectName }}/bin/gop"
         dst: /usr/bin/gop
         type: symlink
