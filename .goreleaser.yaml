@@ -96,7 +96,7 @@ winget:
         private_key: "{{ .Env.WINGET_PKGS_PRIVATE_KEY }}"
       pull_request:
         enabled: true
-        draft: false
+        draft: true
         base:
           owner: cpunion
           name: winget-pkgs
