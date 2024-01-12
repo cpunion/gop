@@ -103,7 +103,7 @@ winget:
           branch: master
 
 nfpms:
-  - package_name: gop
+  - package_name: goplus-gop
     vendor: goplus
     homepage: https://goplus.org/
     maintainer: Li Jie <cpunion@gmail.com>
@@ -132,6 +132,21 @@ nfpms:
       {{- else if eq .Arch "386" }}i386
       {{- else }}{{ .Arch }}{{ end }}
       {{- if .Arm }}v{{ .Arm }}{{ end }}
+    contents:
+      - src: LICENSE
+        dst: /usr/lib/{{ .ProjectName }}/LICENSE
+      - src: bin/gop
+        dst: /usr/bin/gop
+      - src: bin/gopfmt
+        dst: /usr/bin/gopfmt
+      - src: "*.mod"
+        dst: /usr/lib/{{ .ProjectName }}/
+      - src: "*.sum"
+        dst: /usr/lib/{{ .ProjectName }}/
+      - src: "*.md"
+        dst: /usr/lib/{{ .ProjectName }}/
+      - src: "**/*.go"
+        dst: /usr/lib/{{ .ProjectName }}/
 
 snapcrafts:
   - name: goplus
