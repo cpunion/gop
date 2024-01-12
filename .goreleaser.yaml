@@ -131,17 +131,45 @@ nfpms:
       {{- else }}{{ .Arch }}{{ end }}
       {{- if .Arm }}v{{ .Arm }}{{ end }}
     contents:
+      # source folder
       - src: LICENSE
         dst: /usr/lib/{{ .ProjectName }}/LICENSE
+      - src: "README.md"
+        dst: /usr/lib/{{ .ProjectName }}/
+      - src: "go.mod"
+        dst: /usr/lib/{{ .ProjectName }}/
+      - src: "go.sum"
+        dst: /usr/lib/{{ .ProjectName }}/
+      - src: "*.go"
+        dst: /usr/lib/{{ .ProjectName }}/
+      - src: ast
+        dst: /usr/lib/{{ .ProjectName }}/
+      - src: builtin
+        dst: /usr/lib/{{ .ProjectName }}/
+      - src: cl
+        dst: /usr/lib/{{ .ProjectName }}/
+      - src: cmd
+        dst: /usr/lib/{{ .ProjectName }}/
+      - src: doc
+        dst: /usr/lib/{{ .ProjectName }}/
+      - src: env
+        dst: /usr/lib/{{ .ProjectName }}/
+      - src: format
+        dst: /usr/lib/{{ .ProjectName }}/
+      - src: parser
+        dst: /usr/lib/{{ .ProjectName }}/
+      - src: printer
+        dst: /usr/lib/{{ .ProjectName }}/
+      - src: scanner
+        dst: /usr/lib/{{ .ProjectName }}/
+      - src: token
+        dst: /usr/lib/{{ .ProjectName }}/
+      - src: watcher
+        dst: /usr/lib/{{ .ProjectName }}/
+      - src: "x"
+        dst: /usr/lib/{{ .ProjectName }}/
+      # symlinks to binaries
       - src: bin
-        dst: /usr/lib/{{ .ProjectName }}/
-      - src: "*.mod"
-        dst: /usr/lib/{{ .ProjectName }}/
-      - src: "*.sum"
-        dst: /usr/lib/{{ .ProjectName }}/
-      - src: "*.md"
-        dst: /usr/lib/{{ .ProjectName }}/
-      - src: "**/*.go"
         dst: /usr/lib/{{ .ProjectName }}/
       - src: "/usr/lib/{{ .ProjectName }}/bin/gop"
         dst: /usr/bin/gop
