@@ -101,3 +101,39 @@ winget:
           owner: cpunion
           name: winget-pkgs
           branch: master
+
+nfpms:
+  - package_name: gop
+    vendor: goplus
+    homepage: https://goplus.org/
+    maintainer: Li Jie <cpunion@gmail.com>
+    license: Apache-2.0
+    description: |
+      The Go+ programming language is designed for engineering, STEM education, and data science.
+      - For engineering: working in the simplest language that can be mastered by children.
+      - For STEM education: studying an engineering language that can be used for work in the future.
+      - For data science: communicating with engineers in the same language.
+    formats:
+      - "deb"
+      - "rpm"
+      - "archlinux"
+      - "termux.deb"
+    overrides:
+      deb:
+        dependencies:
+          - "go (>= 1.18.0)"
+      rpm:
+        dependencies:
+          - "go >= 1.18.0"
+
+snapcrafts:
+  - name: goplus
+    title: The Go+ Programming Language
+    summary: The Go+ Programming Language
+    description: |
+      The Go+ programming language is designed for engineering, STEM education, and data science.
+      - For engineering: working in the simplest language that can be mastered by children.
+      - For STEM education: studying an engineering language that can be used for work in the future.
+      - For data science: communicating with engineers in the same language.
+    confinement: classic
+    license: Apache-2.0
