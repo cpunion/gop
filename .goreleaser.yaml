@@ -116,8 +116,6 @@ nfpms:
     formats:
       - "deb"
       - "rpm"
-      - "archlinux"
-      - "termux.deb"
     overrides:
       deb:
         dependencies:
@@ -135,10 +133,8 @@ nfpms:
     contents:
       - src: LICENSE
         dst: /usr/lib/{{ .ProjectName }}/LICENSE
-      - src: bin/gop
-        dst: /usr/bin/gop
-      - src: bin/gopfmt
-        dst: /usr/bin/gopfmt
+      - src: bin
+        dst: /usr/lib/{{ .ProjectName }}/
       - src: "*.mod"
         dst: /usr/lib/{{ .ProjectName }}/
       - src: "*.sum"
@@ -147,6 +143,12 @@ nfpms:
         dst: /usr/lib/{{ .ProjectName }}/
       - src: "**/*.go"
         dst: /usr/lib/{{ .ProjectName }}/
+      - src: "/usr/lib/{{ .ProjectName }}/bin/gop"
+        dst: /usr/bin/gop
+        type: symlink
+      - src: "/usr/lib/{{ .ProjectName }}/bin/gopfmt"
+        dst: /usr/bin/gopfmt
+        type: symlink
 
 snapcrafts:
   - name: goplus
