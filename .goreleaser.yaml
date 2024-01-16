@@ -129,6 +129,7 @@ nfpms:
     formats:
       - "deb"
       - "rpm"
+      - "archlinux"
     overrides:
       deb:
         dependencies:
