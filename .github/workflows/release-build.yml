@@ -57,7 +57,7 @@ jobs:
         for file in dist/*.{deb,rpm}
         do
           echo "Uploading $file to Fury.io"
-          CODE=`curl --write-out '%{http_code}' --output /dev/null -sS -F package=@$file https://$FURY_TOKEN@push.fury.io/{{ .Env.GITHUB_REPOSITORY_OWNER }}/`
+          CODE=`curl --write-out '%{http_code}' --output /dev/null -sS -F package=@$file https://$FURY_TOKEN@push.fury.io/$GITHUB_REPOSITORY_OWNER/`
           if [ "$CODE" != "200" ]; then
             echo "Upload failed with code $CODE"
             exit 1
