@@ -101,15 +101,12 @@ winget:
       - package_identifier: GoLang.Go
         minimum_version: 1.18.0
     repository:
-      owner: goplus
+      owner: "{{ .Env.GITHUB_REPOSITORY_OWNER }}"
       name: winget-pkgs
       branch: "{{.ProjectName}}-v{{.Version}}"
-      git:
-        url: "git@github.com:{{ .Env.GITHUB_REPOSITORY_OWNER }}/winget-pkgs.git"
-        private_key: "{{ .Env.WINGET_PKGS_PRIVATE_KEY }}"
+      token: "{{ .Env.WINGET_PKGS_PRIVATE_KEY }}"
       pull_request:
         enabled: true
-        draft: true
         base:
           owner: microsoft
           name: winget-pkgs
