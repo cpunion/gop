@@ -104,7 +104,6 @@ winget:
       owner: "{{ .Env.GITHUB_REPOSITORY_OWNER }}"
       name: winget-pkgs
       branch: "{{.ProjectName}}-v{{.Version}}"
-      token: "{{ .Env.WINGET_PKGS_PRIVATE_KEY }}"
       pull_request:
         enabled: true
         base:
