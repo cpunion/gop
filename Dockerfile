@@ -9,11 +9,10 @@ ENV GOPROOT=/usr/local/gop
 RUN set -eux; \
 	mkdir $GOPROOT; \
 	if [ $USE_GORELEASER_ARTIFACTS -eq 1 ]; then \
-		tar -xzf "${GORELEASER_ARTIFACTS_TARBALL}" -C $GOPROOT; \
+	tar -xzf "${GORELEASER_ARTIFACTS_TARBALL}" -C $GOPROOT; \
 	else \
-		git ls-tree --full-tree --name-only -r HEAD | grep -vE "^\." | xargs -I {} cp --parents {} $GOPROOT/; \
-		./all.bash; \
-		mv bin $GOPROOT/; \
+	./all.bash; \
+	mv bin $GOPROOT/; \
 	fi
 
 FROM $BASE_IMAGE
