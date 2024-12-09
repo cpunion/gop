@@ -11,6 +11,7 @@ RUN set -eux; \
 	if [ $USE_GORELEASER_ARTIFACTS -eq 1 ]; then \
 	tar -xzf "${GORELEASER_ARTIFACTS_TARBALL}" -C $GOPROOT; \
 	else \
+	git ls-tree --full-tree --name-only -r HEAD | grep -vE "^\." | xargs -I {} cp --parents {} $GOPROOT/; \
 	./all.bash; \
 	mv bin $GOPROOT/; \
 	fi
